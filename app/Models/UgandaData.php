@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UgandaData extends Model
 {
-    use App\Models\Concerns\UsesUuid;
+    use \App\Models\Concerns\UsesUuid;
 
     protected $guarded = [];
 
