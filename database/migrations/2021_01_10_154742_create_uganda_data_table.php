@@ -14,7 +14,7 @@ class CreateUgandaDataTable extends Migration
     public function up()
     {
         Schema::create('uganda_data', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->integer('total_cases');
             $table->integer('new_cases');
             $table->integer('new_deaths');
