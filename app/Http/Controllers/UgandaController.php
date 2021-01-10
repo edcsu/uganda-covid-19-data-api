@@ -24,7 +24,7 @@ class UgandaController extends Controller
         $uganda_data->new_tests = $request->newTests;
         $uganda_data->total_tests = $request->totalTests;
         $uganda_data->total_cases = $request->totalCases;
-        $uganda_data->total_cases = $request->totalCases;
+        $uganda_data->date_for = $request->dateFor;
         $uganda_data->save();
 
         return response()->json([
@@ -45,10 +45,18 @@ class UgandaController extends Controller
 
       public function updateUgandaResults(Request $request, $id) {
         if (UgandaData::where('id', $id)->exists()) {
-            $student = UgandaData::find($id);
-            $student->name = is_null($request->name) ? $student->name : $request->name;
-            $student->course = is_null($request->course) ? $student->course : $request->course;
-            $student->save();
+            $uganda_data = UgandaData::find($id);
+            $uganda_data->new_cases = is_null($request->newCases) ? $uganda_data->new_cases : $request->newCases;
+            $uganda_data->total_cases = is_null($request->totalCases) ? $uganda_data->total_cases : $request->totalCases;
+            $uganda_data->new_deaths = is_null($request->newDeaths) ? $uganda_data->new_deaths : $request->newDeaths;
+            $uganda_data->total_deaths = is_null($request->totalDeaths) ? $uganda_data->total_deaths : $request->totalDeaths;
+            $uganda_data->new_recoveries = is_null($request->newRecoveries) ? $uganda_data->new_recoveries : $request->newRecoveries;
+            $uganda_data->total_recoveries = is_null($request->totalRecoveries) ? $uganda_data->total_recoveries : $request->totalRecoveries;
+            $uganda_data->new_tests = is_null($request->newTests) ? $uganda_data->new_tests : $request->newTests;
+            $uganda_data->total_tests = is_null($request->totalTests) ? $uganda_data->total_tests : $request->totalTests;
+            $uganda_data->total_cases = is_null($request->totalCases) ? $uganda_data->total_cases : $request->totalCases;
+            $uganda_data->date_for = is_null($request->dateFor) ? $uganda_data->date_for : $request->dateFor;
+            $uganda_data->save();
 
             return response()->json([
                 "message" => "records updated successfully"
