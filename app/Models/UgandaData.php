@@ -9,5 +9,5 @@ class UgandaData extends Model
 {
     protected $table = 'uganda_data';
 
-    protected $fillable = ['totalCases', 'newCases', 'totalDeaths', 'newDeaths', 'totalRecoveries', 'newRecoveries', 'totalTests', 'newTests', 'date'];
+    protected $fillable = ['total_cases', 'new_cases', 'total_deaths', 'new_deaths', 'total_recoveries', 'new_recoveries', 'total_tests', 'new_tests', 'date_for'];
 }

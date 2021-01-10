@@ -15,8 +15,16 @@ class UgandaController extends Controller
 
       public function createUgandaResults(Request $request) {
         $uganda_data = new UgandaData;
-        $uganda_data->name = $request->name;
-        $uganda_data->course = $request->course;
+        $uganda_data->new_cases = $request->newCases;
+        $uganda_data->total_cases = $request->totalCases;
+        $uganda_data->new_deaths = $request->newDeaths;
+        $uganda_data->total_deaths = $request->totalDeaths;
+        $uganda_data->new_recoveries = $request->newRecoveries;
+        $uganda_data->total_recoveries = $request->totalRecoveries;
+        $uganda_data->new_tests = $request->newTests;
+        $uganda_data->total_tests = $request->totalTests;
+        $uganda_data->total_cases = $request->totalCases;
+        $uganda_data->total_cases = $request->totalCases;
         $uganda_data->save();
 
         return response()->json([
