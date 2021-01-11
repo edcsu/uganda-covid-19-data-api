@@ -28,7 +28,7 @@ class UgandaController extends Controller
         $uganda_data->save();
 
         return response()->json([
-            "message" => "student record created"
+            "message" => "Record created"
         ], 201);
       }
 
